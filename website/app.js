@@ -1,5 +1,5 @@
 /* Global Variables */
-const APIKey = '&appid={put your api key}';
+const APIKey = '&appid={put your api key}&units=imperial'; //&units=metric 
 const baseURL = 'https://api.openweathermap.org/data/2.5/weather?';
 
 
@@ -56,15 +56,15 @@ const updateUI = async () => {
         const allData = await request.json();
 
         let newP = document.createElement('p');
-        newP.innerText = `Date : ${allData.date}`;
+        newP.innerHTML = `Date : ${allData.date}`;
         document.getElementById('date').appendChild(newP);
 
         newP = document.createElement('p');
-        newP.innerText = `Temperature :${allData.temperature}`;
+        newP.innerHTML = `Temperature :${allData.temperature}`;
         document.getElementById('temp').appendChild(newP);
 
         newP = document.createElement('p');
-        newP.innerText = `Content : ${document.getElementById('feelings').value}`;
+        newP.innerHTML = `Content : ${document.getElementById('feelings').value}`;
         document.getElementById('content').appendChild(newP);
   
     }catch(error){
