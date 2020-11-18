@@ -68,6 +68,10 @@ const updateUI = async () => {
         document.getElementById('content').appendChild(newP);
   
     }catch(error){
+        const newP = document.createElement('p');
+        newP.innerHTML = 'Sorry, There is an erro on connect API';
+        document.getElementById('entryHolder').appendChild(newP);
+
       console.log("error", error);
     }
   }
